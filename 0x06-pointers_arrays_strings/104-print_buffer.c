@@ -7,7 +7,7 @@
  * @l: line of buffer to print
  *
  * Return: void
- *
+ */
 
 void print_line(char *c, int s, int l)
 {
@@ -24,7 +24,6 @@ putchar(' ');
 for (k = 0; k <= s; k++)
 {
 if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
-putchar(c[l * 10 + k]);
 putchar(c[l * 10 + k]);
 else
 putchar('.');
