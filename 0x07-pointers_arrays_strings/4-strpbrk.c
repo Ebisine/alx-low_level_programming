@@ -1,19 +1,26 @@
-#include "main.h"
-
 /**
- * print_chessboard - prints the chessboard
- * @a: two dimension array to print
+ * _strpbrk - Returns pointer to first occurence of any of accept
+ * in the string s
+ *
+ * @s: string to search
+ * @accept: characters to look for
+ *
+ * Return: pointer to first occurrence of accept in s
  */
-void print_chessboard(char (*a)[8])
+char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+	char *ptr = accept;
 
-	for (i = 0; i < 8; i++)
+	while (*s != 0)
 	{
-		for (j = 0; j < 8; j++)
+		if (*s == *ptr && *ptr != 0)
+			return (s);
+		ptr++;
+		if (*ptr == 0)
 		{
-			_putchar(a[i][j]);
+			ptr = accept;
+			s++;
 		}
-		_putchar('\n');
 	}
+	return (0);
 }
